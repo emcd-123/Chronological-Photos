@@ -24,13 +24,12 @@ for child in Path(path).iterdir():
 
 dates = sorted(dates)
 
+#renaming the files
 for i, j in enumerate(dates):
     
     t = re.search(r"\.\w+",j[1])
     ext = t.group()
-    #filepath = path +'/'+ j[1]
     new_name = str(i)+ext
-    #filepath.rename(path / new_name)
     
     rename(path +'/'+ j[1],path+'/'+ new_name)
     
