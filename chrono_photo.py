@@ -20,8 +20,10 @@ for child in Path(path).iterdir():
         exifdata = image.getexif()
 
         data = exifdata.get(306)
-        if type(data) == None:
+        
+        if data == None:
             data = "2004:02:24 00:00:00"
+        
         dates.append([data,child.name])
 
 dates = sorted(dates)
